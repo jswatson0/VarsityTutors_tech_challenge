@@ -1,0 +1,36 @@
+The Challenge:
+
+You have invented the greatest beverage known to mankind and only you have the secret recipe to produce it.
+The entire world wants your beverage and are willing to embrace your bold (Tesla-inspired) direct to consumer
+sales & marketing approach. Build a lightweight website where your global audience can purchase your wunder-beverage
+and have it shipped directly to their location. Show the popularity of your beverage by showing a real-time feed of
+sales made (twitter feed style with first name, quantity, city, country) and simple real-time stats showing # of units
+sold & # of units shipped.
+
+Please include:
+1 ) Instructions to setup and run your wunder-beverage website locally
+2 ) Have your wunder-beverage site be properly covered w/ tests. Use Minitest for the rails components.
+3 ) A rake task that can be run while local site is running that will allow a simulation of a "live site"
+(have purchases & shipping counters update in real time via pusher, have the twitter-esque style feed update in
+real-time via pusher ).
+4 ) Use a free pusher account (pusher.com) for your real-time components
+5 ) Use Bootstrap for any front-end visuals (if you need icons, use the glypicons in Bootstrap).
+6 ) For CSS: Use SCSS for styling
+7 ) We do not use CoffeeScript in our appli cation, if you use JavaScript outside of a framework please use native
+JavaScript.
+8 ) For templating, please use ERB.
+9 ) Please use MySQL for your database. ( recommend the mysql2 gem)
+10 ) Please use the latest rails version.
+11 ) Please use the latest version of Ruby that is available within RVM.
+
+Important Notes:
+1 ) Please create a private github repo immediately and invite: adeviadoug to the repo. We like to watch the commit
+stream to see your thinking process. Please commit early & often (within reason) so I can see the evolution of your
+application. (Email our CTO, Doug Schlenker, the link to your repo so we ensure we associate your application to your
+repo, doug@varsitytutors.com)
+2 ) Have fun! If you would like to add additional aspects to your wunder-beverage site feel free to do so.
+3 ) You don't have to call it the wunder-beverage, you can give it your own flair (I actually encourage it)
+4 ) Shoot Doug an email (doug@varsitytutors.com) once you're done with the URL to the github submission (this makes it
+easier to find).
+5 ) If you have any questions, feel free to ask. All questions and any comments that you have post submission
+(which are helpful in our code review) will be passed along during the code review.
