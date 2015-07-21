@@ -15,8 +15,8 @@ html, body {
   padding-bottom: 0px;
 }
 
-.navbar .container {
-  padding: 10px;
+.nav-container {
+  margin: 10px;
 }
 
 #logo {
@@ -41,7 +41,17 @@ html, body {
 //}
 
 .jumbotron {
-  margin-top: 70px;
+  //margin-top: 70px;
+}
+
+.container {
+  margin-top: 80px;
+}
+
+.product {
+  border: solid 1px #2E2F30;
+  padding: 15px;
+  margin-bottom: 10px;
 }
 
 .footer {
