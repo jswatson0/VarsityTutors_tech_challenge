@@ -10,7 +10,6 @@
 <body>
 <div class="wrapper">
   <%= render 'layouts/topnav' %>
-
   <div class="container">
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
@@ -20,8 +19,7 @@
     <% end %>
     <%= yield %>
   </div>
-
+  <%= render 'layouts/footer' %>
 </div>
-<%= render 'layouts/footer' %>
 </body>
 </html>

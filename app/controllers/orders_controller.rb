@@ -6,7 +6,19 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(customer: current_or_guest_customer)
-    @order.add_product(Product.first)
+
+    # collect the selected products
+    order_products = []
+    Product.all.each do |product|
+      if params[product.name]
+        order_products << product.name
+      end
+    end
+
+    # add selected products to the order
+    order_products.each do |product|
+      @order.add_product(product)
+    end
 
     respond_to do |f|
       if @order.save
@@ -24,7 +36,5 @@ class OrdersController < ApplicationController
   def shipping_info
     @order = Order.find(params[:id])
     @customer = @order.customer
-
-
   end
 end

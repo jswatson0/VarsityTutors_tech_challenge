@@ -4,8 +4,9 @@
       <p><%= product.name %></p>
       <p><%= product.description %></p>
       <p><%= product.cost %></p>
+
       <%= check_box_tag("#{product.name.to_sym}") %>
     <% end %>
   <% end %>
-  <button type="submit" class="btn btn-default">Checkout</button>
+  <button id="checkout-btn" type="submit" class="btn btn-default" >Checkout</button>
 <% end %>
