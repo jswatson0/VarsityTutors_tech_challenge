@@ -1,11 +1,29 @@
 <%= form_for @order, url: {action: "create"} do |f| %>
   <% @products.each do |product| %>
     <%= div_for product do %>
-      <p><%= product.name %></p>
-      <p><%= product.description %></p>
-      <p><%= product.cost %></p>
+      <div class="row">
+        <div class="name col-md-2">
+          <h2><%= product.name %></h2>
+        </div>
 
-      <%= check_box_tag("#{product.name.to_sym}") %>
+        <div class="description col-md-2">
+          <h4><%= product.description %></h4>
+        </div>
+
+        <div class="cost col-md-2">
+          <h5>$<%= product.cost %></h5>
+        </div>
+
+        <div class="col-md-1">
+          <%= f.label :qty, "quantity" %>
+          <%= number_field_tag("#{product.name}_qty".to_sym, nil, in: 1..5, value: 1, class: "form-control") %>
+        </div>
+
+        <div class="add-card col-md-4">
+          <%= f.label "add to cart"%>
+          <%= check_box_tag("#{product.name.to_sym}") %>
+        </div>
+      </div>
     <% end %>
   <% end %>
   <button id="checkout-btn" type="submit" class="btn btn-default" >Checkout</button>

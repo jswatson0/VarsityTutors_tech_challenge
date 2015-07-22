@@ -5,19 +5,21 @@ class OrdersController < ApplicationController
   end
 
   def create
+    products = Product.all
     @order = Order.new(customer: current_or_guest_customer)
+
 
     # collect the selected products
     order_products = []
-    Product.all.each do |product|
+    products.each do |product|
       if params[product.name]
-        order_products << product.name
+        order_products << {"name" =>product.name, "qty" => params["#{product.name}_qty"]}
       end
     end
 
     # add selected products to the order
     order_products.each do |product|
-      @order.add_product(product)
+      @order.add_product(product["name"], product["qty"])
     end
 
     respond_to do |f|
