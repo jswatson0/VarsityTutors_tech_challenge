@@ -14,4 +14,13 @@ class Order < ActiveRecord::Base
     product_cost *= qty.to_i
     self.total_cost += product_cost
   end
+
+  def confirm
+    self.shipped = true
+    self.complete = true
+    self.save!
+  end
+
+  scope :shipped, -> { where(shipped: true)}
+  scope :completed, -> { where(complete: true)}
 end
