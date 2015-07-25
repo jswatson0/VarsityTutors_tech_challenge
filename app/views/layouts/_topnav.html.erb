@@ -1,8 +1,11 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="nav-container">
     <a id='logo' href="/">WunderBevy</a>
-    <div class="counter col-md-2 nav-item">
-      <p>Shipped: <%= "#{Order.shipped.count}" %></p>
+    <div class="shipped-counter col-md-2 nav-item pull-right">
+      <strong>Orders shipped: <%= Order.shipped.count %></strong>
+    </div>
+    <div class="ounces-sold col-md-2 nav-item pull-right">
+      <strong>Ounces sold: <%= Order.ounces_sold %></strong>
     </div>
   </div>
 </nav>

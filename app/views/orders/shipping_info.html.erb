@@ -53,5 +53,35 @@
     </div>
   </div>
 
-  <%= f.submit "Ship it!", class: "btn btn-default btn-primary", style: "margin: 14px" %>
+  <div class="order-preview col-md-12">
+    <div class="row">
+      <div class="col-md-3">
+        <h2>Your Order:</h2>
+      </div>
+    </div>
+    <% @order.products.each do |product| %>
+      <div class="order-details row">
+        <div class="col-md-2">
+          <p><%= product.name %> x <%= product.qty %></p>
+        </div>
+        <div class="col-sm-1">
+          <p>$<%= product.qty * product.cost %></p>
+        </div>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="col-md-2">
+        <strong>Total: </strong>
+      </div>
+      <div class="col-sm-1">
+        <strong>$<%= @order.total_cost %></strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.submit "Ship it!", class: "btn btn-lg btn-primary", style: "margin: 14px" %>
+    </div>
+  </div>
 <% end %>
