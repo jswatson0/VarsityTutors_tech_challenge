@@ -6,7 +6,9 @@ class Order < ActiveRecord::Base
     product = Product.where(name: product_name).first
     # set the product qty
     product.qty = qty.to_i
+    product.order_id = self.id
     self.products << product
+    self.products.last.save!
     self.update_total_cost(product.cost, qty)
   end
 

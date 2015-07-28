@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
 
   def create
     products = Product.all
-    @order = Order.new(customer: current_or_guest_customer)
+    @order = Order.create(customer: current_or_guest_customer)
 
 
     # collect the selected products
