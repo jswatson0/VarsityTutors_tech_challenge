@@ -23,19 +23,19 @@ class Order < ActiveRecord::Base
     self.save!
   end
 
-  def self.ounces_sold
-    total_ounces = 0
+  def self.units_sold
+    total_units = 0
     orders = Order.shipped.includes(:products)
     orders.each do |order|
       order.products.each do |product|
         if product.name == "Six Pack"
-          total_ounces += (12*12) * product.qty.to_i
-        else
-          total_ounces += 22 * product.qty.to_i
+          total_units += 12 * product.qty.to_i
+        elsif product.name == "Bomber"
+          total_units += product.qty.to_i
         end
       end
     end
-    total_ounces
+    total_units
   end
 
   scope :shipped, -> { where(shipped: true) }
